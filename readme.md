@@ -1,26 +1,15 @@
 # CSS-animated beer
-_This simple CSS animation_
+_This is just a simple CSS animation_
 
-## [Check out demo!](https://mmazurkiewicz.github.io/CSS-animated-beer/)
-![Local weather](images/demo1.png "Loacl weather")
-### Features:
-
-* Show current temperature for your actual location
-* Different background image depends on current weather
-* Click temperature to change units
-* It's responsive
+## [Check out demo!](https://mmazurkiewicz.github.io/css-animated-beer/)
+![Local weather](demo.png "Loacl weather")
 
 ### Made with:
 * HTML
-* CSS
-* jQuery
-* Ajax, [simpleWeather](http://simpleweatherjs.com/#home)
-* RWD
+* SCSS
 
-_all photographs are downloaded from unsplash.com_
-___
+_inspired by this [pen](http://codepen.io/totya24/pen/ECdea)_
 
 License
 ----
-
 MIT
