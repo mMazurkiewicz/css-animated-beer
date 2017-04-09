@@ -3,7 +3,7 @@ $beer-color: rgb(255, 195, 78);
 $foamSize: 90px;
 
 body {
-    background-color: rgba(41, 78, 105, 0.6);
+    background-color: rgba(35, 154, 241, 0.6);
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -224,23 +224,4 @@ $bubbleX: 10px;
     width: 100%;
     height: 100%;
     background-color: rgb(142, 73, 11);
-}
-
-.shadow {
-    width: 152px;
-    height: 166px;
-    position: absolute;
-    top: 431px;
-    left: 425px;
-    transform: skew(-41deg, 180deg);
-    background-color: rgba(0, 0, 0, 0.1);
-}
-
-.test {
-  width: 100px;
-  height: 100px;
-  background-color: black;
-  position: absolute;
-  left: 30px;
-  transform: skew(0deg, 0deg);
 }
