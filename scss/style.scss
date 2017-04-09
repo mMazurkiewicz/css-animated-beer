@@ -1,0 +1,246 @@
+$glass-color: rgb(249, 249, 249);
+$beer-color: rgb(255, 195, 78);
+$foamSize: 90px;
+
+body {
+    background-color: rgba(41, 78, 105, 0.6);
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+@mixin foam($size, $positionX, $positionY) {
+    width: $size;
+    height: $size;
+    top: $positionY;
+    left: $positionX;
+}
+@mixin sizeAnime($size) {
+    width: $size;
+    height: $size;
+}
+@keyframes liquidAnime {
+    0% {
+        transform: skew(0deg, 0deg);
+    }
+
+    35% {
+        transform: skew(0deg, 1deg);
+    }
+
+    50% {
+        transform: skew(0deg, 0deg);
+    }
+
+    65% {
+        transform: skew(0deg, -1deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+.glass {
+    position: relative;
+    top: 250px;
+    width: 250px;
+    height: 340px;
+    border-left: 15px solid $glass-color;
+    border-right: 15px solid $glass-color;
+    border-bottom: 10px solid $glass-color;
+    border-top: none;
+    border-radius: 0 0 80px 80px;
+    margin: 0 auto;
+    background-color: $beer-color;
+
+    &::before {
+        content: '';
+        display: block;
+        background-color: lighten($beer-color, 20%);
+        position: absolute;
+        height: 90px;
+        width: 100%;
+        animation: liquidAnime 2s infinite;
+        animation-timing-function: ease-in-out;
+    }
+}
+
+.ear {
+    height: 150px;
+    width: 70px;
+    border-top: 14px solid $glass-color;
+    border-right: 13px solid $glass-color;
+    border-bottom: 14px solid $glass-color;
+    border-radius: 5px 50px 50px 5px;
+    border-left: none;
+    position: absolute;
+    right: -86px;
+    top: 50px;
+}
+@keyframes foamAnimation {
+    0% {
+        @include sizeAnime($foamSize);
+    }
+
+    50% {
+        @include sizeAnime($foamSize - 1);
+    }
+
+    100% {
+        @include sizeAnime($foamSize + 1);
+    }
+}
+
+.foam {
+    position: absolute;
+    display: inline-block;
+    border-radius: 50%;
+    background-color: white;
+
+    &:nth-child(7) {
+        @include foam($foamSize + 10, 10px, -10px);
+        animation: foamAnimation 2500ms infinite;
+    }
+
+    &:nth-child(2) {
+        @include foam($foamSize - 20, 130px, -30px);
+        animation: foamAnimation 500ms infinite;
+    }
+
+    &:nth-child(3) {
+        @include foam($foamSize + 50, -50px, -50px);
+        animation: foamAnimation 1000ms infinite;
+    }
+
+    &:nth-child(4) {
+        @include foam($foamSize, 10px, -80px);
+        animation: foamAnimation 1300ms infinite;
+    }
+
+    &:nth-child(5) {
+        @include foam($foamSize + 10, 210px, -40px);
+        animation: foamAnimation 1200ms infinite;
+    }
+
+    &:nth-child(6) {
+        @include foam($foamSize + 5, 60px, -30px);
+        animation: foamAnimation 900ms infinite;
+    }
+
+    &:nth-child(8) {
+        @include foam($foamSize + 5, 60px, -50px);
+        animation: foamAnimation 2s infinite;
+    }
+
+    &:nth-child(9) {
+        @include foam($foamSize + 5, 160px, -50px);
+        animation: foamAnimation 1s infinite;
+    }
+
+    &:nth-child(10) {
+        @include foam($foamSize + 30, 120px, -20px);
+        animation: foamAnimation 1500ms infinite;
+    }
+}
+
+.shine {
+    position: absolute;
+    top: 70px;
+    left: 30px;
+    width: 50px;
+    height: 0;
+    border-radius: 0 10px 0 70px;
+    border-top: 250px solid rgba(255, 255, 255, 0.3);
+    border-right: 70px solid transparent;
+}
+$bubbleX: 10px;
+@keyframes upUpUp {
+    0% {
+        opacity: 0;
+        bottom: 0;
+        width: 5px;
+        height: 5px;
+    }
+
+    10% {
+        opacity: 1;
+    }
+
+    40% {
+        width: 15px;
+        height: 15px;
+    }
+
+    60% {
+        width: 29px;
+        height: 29px;
+    }
+
+    100% {
+        opacity: 0;
+        bottom: 230px;
+        width: 5px;
+        height: 5px;
+    }
+}
+
+.bubble {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid white;
+    border-radius: 50%;
+    transition: 2s;
+
+    &:nth-child(12) {
+        left: 50px;
+        bottom: 0;
+        animation: upUpUp 2s infinite;
+    }
+
+    &:nth-child(13) {
+        left: 80px;
+        bottom: 20px;
+        animation: upUpUp 3s infinite;
+    }
+
+    &:nth-child(14) {
+        left: 130px;
+        bottom: 10px;
+        animation: upUpUp 1500ms infinite;
+    }
+
+    &:nth-child(15) {
+        left: 180px;
+        bottom: 50px;
+        animation: upUpUp 1s infinite;
+    }
+}
+
+.table {
+    position: absolute;
+    top: 430px;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(142, 73, 11);
+}
+
+.shadow {
+    width: 152px;
+    height: 166px;
+    position: absolute;
+    top: 431px;
+    left: 425px;
+    transform: skew(-41deg, 180deg);
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.test {
+  width: 100px;
+  height: 100px;
+  background-color: black;
+  position: absolute;
+  left: 30px;
+  transform: skew(0deg, 0deg);
+}
