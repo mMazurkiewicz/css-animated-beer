@@ -2,7 +2,7 @@
 _This is just a simple CSS animation_
 
 ## [Check out demo!](https://mmazurkiewicz.github.io/css-animated-beer/)
-![Local weather](demo.png "Loacl weather")
+![](demo.png "CSS Animated Beer")
 
 ### Made with:
 * HTML
